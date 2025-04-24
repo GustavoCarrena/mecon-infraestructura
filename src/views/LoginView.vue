@@ -96,7 +96,7 @@ const handleLogin = async ({ states: { meconUserName, password }, valid }) => {
       const { userProfile } = response
       console.log('response', response)
 
-      const loggedUser = userProfile.find(
+      const loggedUser = userProfile?.find(
         (server) => server.idServidor === MECON_SERVER_ID
       ).user
       const meconUserName = userStore.setUserName(loggedUser)
